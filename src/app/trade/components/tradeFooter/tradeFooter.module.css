@@ -1,0 +1,34 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    padding-bottom: 8px;
+}
+
+.container{
+    background: #16182E;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.headerBtns{
+    display: flex;
+    gap: 8px;
+}
+
+.headerBtn{
+    /* font-size: 13px; */
+    cursor: pointer;
+}
+
+.headerRightInput{
+    margin-right: 8px;
+}
+
+.headerRightTxt{
+    /* font-size: 13px; */
+}

@@ -1,0 +1,86 @@
+.optionsBox{
+    /* width: 360px; */
+    /* width: 100%; */
+    background: #16182E;
+    padding: 12px;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+.headerBtn{
+    width: 33.33%;
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+    cursor: pointer;
+    background:  #212641;
+    transition: all 0.2s ease-in-out;
+}
+.headerBtn:hover{
+    background: #2B3157;
+}
+.headerActive{
+    background: #2D42FC;
+}
+.headerActive:hover{
+    background: #2D42FC;
+}
+.headerBtnIcon{
+    /* font-size: 12px; */
+}
+.headerBtnTxt{
+    /* font-size: 12px; */
+}
+
+.marketLimitTpRow{
+    display: flex;
+    /* font-size: 13px; */
+    color: #BABAC0;
+    padding-top: 1rem;
+    padding-bottom: 8px;
+    gap: 1rem;
+}
+
+
+.swiper{
+    margin-top: 12px;
+}
+.swipperBtnContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.swipperBtn{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #2D42FC;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+
+
+
+
+@media (max-width: 1048px) {
+    .optionsBox{
+        /* 360-12=348 */
+        margin-right: 12px;
+        margin-top: 12px;
+        width: calc(100% - 348px);
+    }
+  }
+
+
+  @media (max-width: 800px) {
+    .optionsBox{
+        width: 100%;
+    }
+  }

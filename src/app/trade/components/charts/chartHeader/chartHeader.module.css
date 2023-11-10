@@ -1,0 +1,45 @@
+.chartHeader{
+    display: flex;
+    justify-content: space-between;
+}
+.container{
+    background: #16182E;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+.left{
+    display: flex;
+}
+.right{
+    display: flex;
+}
+.valueContainer{
+    padding: 0 1rem;
+}
+.valueContainer:nth-of-type(4) {
+    padding-right: 0;
+  }
+.valueTop{
+
+}
+.valueBottom{}
+
+.versionContainer{
+    background: #16182E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-left: 12px;
+}
+.version{
+    /* font-size: 12px; */
+    background: #2F325F;
+    padding: 12px;
+}
+.versionActive{
+    background: #2D42FC;
+}

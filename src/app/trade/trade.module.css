@@ -1,0 +1,36 @@
+.container{
+  display: flex;
+  width: 100%;
+}
+
+.left{
+  width: 100%;
+}
+
+.right{
+  margin-left: 12px;
+}
+
+/* 1100 */
+
+@media (max-width: 1048px) {
+  .container{
+    display: flex;
+    flex-direction: column;
+  }
+  .right{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0;
+  }
+}
+
+/* 800 */
+@media (max-width: 800px) {
+  .right{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    margin-left: 0;
+  }
+}

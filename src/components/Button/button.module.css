@@ -1,0 +1,44 @@
+.button{
+    cursor: pointer;
+    padding: 8px 2rem;
+    /* border-radius: 8px; */
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+    background: #2D42FC;
+    border: 2px solid #2D42FC;
+    width: fit-content;
+    transition: all 0.5s ease-in-out;
+}
+
+.button:hover{
+    opacity: 0.8;
+}
+
+.disabled{
+    cursor: auto;
+    opacity: 0.8;
+}
+
+.fullWidth{
+    width: 100%;
+}
+
+.secondary{
+    background: #16182E;
+    border: 2px solid #16182E;
+    /* font-size: 18px; */
+    font-weight: 600;
+}
+
+.large{
+    background: #2D42FC;
+    border: 2px solid #2D42FC;
+    /* font-size: 13px; */
+    font-weight: 500;
+    padding: 12px 3rem;
+}
+
+.outline{
+    background: transparent;
+}
