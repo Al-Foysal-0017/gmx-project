@@ -13,10 +13,12 @@
     width: 33.33%;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 12px 0;
     cursor: pointer;
     background:  #212641;
     transition: all 0.2s ease-in-out;
+    /* border: 2px solid red; */
 }
 .headerBtn:hover{
     background: #2B3157;
@@ -28,10 +30,12 @@
     background: #2D42FC;
 }
 .headerBtnIcon{
-    /* font-size: 12px; */
+    font-size: 12px;
+    margin-right: 8px;
+    margin-top: 3px;
 }
 .headerBtnTxt{
-    /* font-size: 12px; */
+    font-size: 12px;
 }
 
 .marketLimitTpRow{

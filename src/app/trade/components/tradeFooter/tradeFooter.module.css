@@ -32,3 +32,11 @@
 .headerRightTxt{
     /* font-size: 13px; */
 }
+
+
+@media (max-width: 448px) {
+    .header{
+        display: flex;
+        flex-direction: column;
+    }
+  }

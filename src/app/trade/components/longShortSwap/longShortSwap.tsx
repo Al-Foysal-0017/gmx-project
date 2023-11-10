@@ -1,5 +1,7 @@
 import React from 'react'
 import { HiMiniArrowsUpDown } from 'react-icons/hi2';
+import { LuArrowLeftRight } from 'react-icons/lu';
+import { BsGraphUpArrow, BsGraphDownArrow, BsArrowLeftRight } from 'react-icons/bs';
 import styles from "./longShortSwap.module.css"
 import FirstCoinBox from './firstCoinBox/FirstCoinBox'
 import LeverageSlider from './leverageSlider/LeverageSlider'
@@ -12,15 +14,15 @@ const OptionsBox = () => {
         {/* Header */}
         <div className={styles.header}>
             <div className={`${styles.headerBtn} ${styles.headerActive}`}>
-                <span className={styles.headerBtnIcon}>ICN</span>
+                <span className={styles.headerBtnIcon}><BsGraphUpArrow/></span>
                 <span className={styles.headerBtnTxt} >Long</span>
             </div>
             <div className={styles.headerBtn}>
-                <span className={styles.headerBtnIcon}>ICN</span>
+                <span className={styles.headerBtnIcon}><BsGraphDownArrow/></span>
                 <span className={styles.headerBtnTxt}>Short</span>
             </div>
             <div className={styles.headerBtn}>
-                <span className={styles.headerBtnIcon}>ICN</span>
+                <span className={styles.headerBtnIcon}><BsArrowLeftRight/></span>
                 <span className={styles.headerBtnTxt}>Swap</span>
             </div>
         </div>
