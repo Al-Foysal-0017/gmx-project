@@ -12,6 +12,18 @@
 }
 .left{
     display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.logo{
+    margin-right: 8px; 
+}
+.coinName{
+    font-size: 20px;
+    font-weight: 500;
+}
+.icon{
+    margin-left: 5px;
 }
 .right{
     display: flex;
@@ -22,10 +34,17 @@
 .valueContainer:nth-of-type(4) {
     padding-right: 0;
   }
-.valueTop{
-
+.primaryTxt{
+    font-size: 17px;
 }
-.valueBottom{}
+.secondaryTxt{
+    font-size: 12px;
+    color: #BABAC0;
+}
+.dynamicTxt{
+    font-size: 17px;
+    color: #F23B56;
+}
 
 .versionContainer{
     background: #16182E;
@@ -36,9 +55,10 @@
     margin-left: 12px;
 }
 .version{
-    /* font-size: 12px; */
+    font-size: 12px;
     background: #2F325F;
     padding: 12px;
+    cursor: pointer;
 }
 .versionActive{
     background: #2D42FC;
@@ -50,3 +70,6 @@
         display: none;
     }
   }
+
+
+

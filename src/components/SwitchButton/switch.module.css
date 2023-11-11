@@ -1,0 +1,64 @@
+/* Style the switch container */
+.customSwitch {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Style the switch label */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 17px;
+  }
+  
+  /* Style the switch input (hidden) */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* Style the slider (the actual switch) */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #888; /* Change the background color when off */
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 8px;
+  }
+  
+  /* Style the slider when it's on (active) */
+  .slider:before {
+    position: absolute;
+    content: '';
+    height: 13px;
+    width: 13px;
+    left: 1px;
+    bottom: 2px;
+    background-color: #fff; /* Change the handle color when off */
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  /* Style the input (checkbox) when it's checked (active) */
+  .switch input:checked + .slider {
+    background-color: #2D42FC; /* Change the background color when on */
+  }
+  
+  /* Style the input (checkbox) when it's checked (active) */
+  .switch input:checked + .slider:before {
+    /* -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px); */
+    -webkit-transform: translateX(15px);
+    -ms-transform: translateX(15px);
+    transform: translateX(15px);
+  }
+  

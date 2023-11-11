@@ -1,7 +1,9 @@
 import React from 'react'
 import styles from "./firstCoinBox.module.css"
+import useTokenModel from '@/hooks/useTokenModel';
 
 const FirstCoinBox = () => {
+  const { onOpen } = useTokenModel();
   return (
     <div className={styles.container}>
         <div className={styles.headerRow}>
@@ -10,7 +12,7 @@ const FirstCoinBox = () => {
         </div>
         <div className={styles.inputRow}>
             <input type='number' placeholder='0.0' className={styles.input}/>
-            <span className={styles.coinBox}>
+            <span onClick={onOpen} className={styles.coinBox}>
                 <span>ICN</span>
                 <span>SOL</span>
                 <span>ICN</span>

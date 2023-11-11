@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { HiMiniArrowsUpDown } from 'react-icons/hi2';
 import { LuArrowLeftRight } from 'react-icons/lu';
 import { BsGraphUpArrow, BsGraphDownArrow, BsArrowLeftRight } from 'react-icons/bs';
@@ -9,19 +9,20 @@ import Values from './values/Values'
 import BottomButton from './bottomButton/BottomButton'
 
 const OptionsBox = () => {
+    const [longShortSwip, setLongShortSwip] = useState("long")
   return (
     <div className={styles.optionsBox}>
         {/* Header */}
         <div className={styles.header}>
-            <div className={`${styles.headerBtn} ${styles.headerActive}`}>
+            <div onClick={()=>{setLongShortSwip("long")}} className={`${styles.headerBtn} ${longShortSwip==="long" && styles.headerActive}`}>
                 <span className={styles.headerBtnIcon}><BsGraphUpArrow/></span>
                 <span className={styles.headerBtnTxt} >Long</span>
             </div>
-            <div className={styles.headerBtn}>
+            <div onClick={()=>{setLongShortSwip("short")}} className={`${styles.headerBtn} ${longShortSwip==="short" && styles.headerActive}`}>
                 <span className={styles.headerBtnIcon}><BsGraphDownArrow/></span>
                 <span className={styles.headerBtnTxt}>Short</span>
             </div>
-            <div className={styles.headerBtn}>
+            <div onClick={()=>{setLongShortSwip("swip")}} className={`${styles.headerBtn} ${longShortSwip==="swip" && styles.headerActive}`}>
                 <span className={styles.headerBtnIcon}><BsArrowLeftRight/></span>
                 <span className={styles.headerBtnTxt}>Swap</span>
             </div>
