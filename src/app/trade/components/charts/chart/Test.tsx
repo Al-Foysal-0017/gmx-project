@@ -2,10 +2,10 @@ import React from 'react';
 import Highcharts from 'highcharts/highstock';
 import HighchartsReact from 'highcharts-react-official';
 import styles from "./chart.module.css"
-// import HCExporting from 'highcharts/modules/exporting'; // Import the exporting module
+import HCExporting from 'highcharts/modules/exporting'; // Import the exporting module
 
 // Initialize the exporting module
-// HCExporting(Highcharts);
+HCExporting(Highcharts);
 
 const CandlestickChartHighChart = () => {
   const data = [{
@@ -398,23 +398,30 @@ const CandlestickChartHighChart = () => {
     //   buttons: {
     //     contextButton: {
     //       menuItems: ['downloadPNG', 'downloadJPEG', 'downloadPDF', 'downloadSVG'],
-    //       // symbol: 'url(path-to-your-custom-icon.svg)', // Provide the path or URL to your custom icon
-    //       symbolFill: 'white', // Color of the button symbol
-    //       symbolStroke: 'white', // Border color of the button symbol
-    //       symbolStrokeWidth: 2,  // Border width of the button symbol
-    //       theme: {
-    //         fill: '101124',      // Background color of the button
-    //         stroke: '#23263B',      // Border color of the button
-    //         'stroke-width': 2,    // Border width of the button
-    //         hover: {
-    //           fill: 'red',    // Background color on hover
-    //           stroke: '#23263B',    // Border color on hover
-    //         },
-    //       },
     //     },
     //   },
     // },
-    
+    exporting: {
+      enabled: true,
+      buttons: {
+        contextButton: {
+          menuItems: ['downloadPNG', 'downloadJPEG', 'downloadPDF', 'downloadSVG'],
+          // symbol: 'url(path-to-your-custom-icon.svg)', // Provide the path or URL to your custom icon
+          symbolFill: 'white', // Color of the button symbol
+          symbolStroke: 'white', // Border color of the button symbol
+          symbolStrokeWidth: 2,  // Border width of the button symbol
+          theme: {
+            fill: '101124',      // Background color of the button
+            stroke: '#23263B',      // Border color of the button
+            'stroke-width': 2,    // Border width of the button
+            hover: {
+              fill: 'red',    // Background color on hover
+              stroke: '#23263B',    // Border color on hover
+            },
+          },
+        },
+      },
+    },
   };
 
   return (

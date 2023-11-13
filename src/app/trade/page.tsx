@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React from 'react'
 import styles from "./trade.module.css"
 import PageLayout from '@/components/pageLayout/PageLayout'
 import ChartHeader from './components/charts/chartHeader/ChartHeader'

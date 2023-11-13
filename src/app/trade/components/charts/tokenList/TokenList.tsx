@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+import React from 'react';
 import styles from "./tokenList.module.css";
 import Image from 'next/image';
 
