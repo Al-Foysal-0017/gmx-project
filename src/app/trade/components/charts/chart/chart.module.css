@@ -4,12 +4,7 @@
     background: #16182E;
     margin-top: 12px;
     padding: 12px;
+    /* padding-top: 12px; */
+    /* border: 1px solid #373c70; */
 }
 
-.chartTEST{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}

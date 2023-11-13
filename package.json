@@ -9,8 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "apexcharts": "^3.35.5",
+    "highcharts": "^11.2.0",
+    "highcharts-more": "^0.1.7",
+    "highcharts-react-official": "^3.2.1",
     "next": "14.0.1",
     "react": "^18",
+    "react-apexcharts": "^1.4.0",
     "react-dom": "^18",
     "react-icons": "^4.11.0",
     "zustand": "^4.4.6"
@@ -19,6 +24,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-highcharts": "^16.0.6",
     "eslint": "^8",
     "eslint-config-next": "14.0.1",
     "typescript": "^5"

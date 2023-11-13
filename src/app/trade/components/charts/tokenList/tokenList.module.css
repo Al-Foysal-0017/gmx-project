@@ -5,6 +5,7 @@
     width: 424px;
     border: 1px solid #363965;
     border-radius: 4px;
+    z-index: 999;
 }
 
  

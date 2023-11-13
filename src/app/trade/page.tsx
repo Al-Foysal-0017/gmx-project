@@ -3,12 +3,13 @@ import React, { useState } from 'react'
 import styles from "./trade.module.css"
 import PageLayout from '@/components/pageLayout/PageLayout'
 import ChartHeader from './components/charts/chartHeader/ChartHeader'
-import Chart from './components/charts/chart/Chart'
+// import Chart from './components/charts/chart/Chart'
 import TradeFooter from './components/tradeFooter/TradeFooter'
 import LongShortSwap from './components/longShortSwap/longShortSwap'
 import SummaryBox from './components/summaryBox/SummaryBox'
 import CoinModel from './components/coinsModel/CoinModel'
 import useTokenModel from '@/hooks/useTokenModel'
+import CandlestickChartHighChart from './components/charts/chart/CandleChartHighChart'
 
 const Trade = () => {
   const { isOpen:coinModel } = useTokenModel();
@@ -20,8 +21,10 @@ const Trade = () => {
       <div className={styles.container}>
         <div className={styles.left}>
           <ChartHeader/>
-          <Chart/>
+          <CandlestickChartHighChart/>
+          {/* <Chart/> */}
           <TradeFooter/>
+          
         </div>
         {/* Right Side */}
         <div className={styles.right}>
