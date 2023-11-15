@@ -1,3 +1,15 @@
+:root {
+  --color-white: #fff;
+  --color-gray: #B8BBC1;
+  --color-green: #0BC37F;
+  --color-red: #FA3C58;
+  --color-blue: #2D42FC;
+  --color-black-primary: #08091B;
+  --color-black-secondary: #16182E;
+  --color-outline: #363965;
+} 
+/* use: color: var(--color-white); */
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -7,8 +19,8 @@
 html,
 body {
   max-width: 100vw;
-  background: #101124;
-  color: #fff;
+  background: var(--color-black-primary);
+  color: var(--color-white);
   font-size: 14px;
 }
 

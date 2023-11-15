@@ -12,7 +12,7 @@
     position: absolute;
     right: 0;
     width: 400px;
-    background: #16182E;
+    background: var(--color-black-secondary);
     padding: 24px 0;
     font-size: 15px;
     animation: modelAnimation 0.2s ease-in-out;
@@ -48,29 +48,27 @@
     outline: none;
     width: 100%;
     padding: 12px 16px;
-    background: #16182E;
-    border: 1px solid #363965;
+    background: var(--color-black-secondary);
+    border: 1px solid var(--color-outline);
     border-radius: 4px;
     font-size: 16px;
     color: #fff;
 }
 
 .coins{
-    border-top: 1px solid #363965;
+    border-top: 1px solid var(--color-outline);
     padding: 0 24px;
     padding-top: 1rem;
     display: flex;
     flex-direction: column;
     gap: 8px;
     height: calc(100vh - 116px);
-    /* box-sizing: border-box; */
     overflow-y: scroll;
 }
 
 .coin{
     display: flex;
-    /* border: 1px solid #282b50; */
-    border: 1px solid #363965;
+    border: 1px solid var(--color-outline);
     padding: 8px;
     border-radius: 4px;
     cursor: pointer;
@@ -89,25 +87,21 @@
     color: #A0A3C4;
 }
 
-
 .extraPadding{
     padding-bottom: 1rem;
 }
-
-
 
 @media (max-width: 524px) {
     .model{
         width: 80%;
     }
-  }
+}
 
-
-  @media (max-width: 424px) {
+@media (max-width: 424px) {
     .model{
         width: 90%;
     }
-  }
+}
 
 
  

@@ -5,6 +5,7 @@ import styles from "./chartHeader.module.css"
 import useVersion from '@/hooks/useVersion';
 import Image from 'next/image';
 import TokenList from '../tokenList/TokenList';
+import Wrapper from '@/components/Wrapper/Wrapper';
 
 const ChartHeader = () => {
     const { version, setV1, setV2 } = useVersion();
@@ -12,8 +13,7 @@ const ChartHeader = () => {
   return (
     <>
     <div className={styles.chartHeader}>
-        {/* Values */}
-        <div className={styles.container}>
+        <Wrapper className={styles.container}>
             <div onClick={()=>{setOpenCoinList(!openCoinList)}} className={styles.left}>
                 <Image
                     width={20} 
@@ -44,10 +44,10 @@ const ChartHeader = () => {
                     <div className={styles.primaryTxt}>0.973</div>
                 </span>
             </div>
-        </div>
+        </Wrapper>
         
         {/* Version */}
-        <div className={styles.versionContainer}>
+        <Wrapper className={styles.versionContainer}>
             <div 
                 onClick={setV1}
                 className={`${styles.version} ${version=="v1" && styles.versionActive}`}
@@ -60,7 +60,7 @@ const ChartHeader = () => {
             >
                 V2
             </div>
-        </div>
+        </Wrapper>
     </div>
     <TokenList openCoinList={openCoinList} setOpenCoinList={setOpenCoinList}/>
     </>

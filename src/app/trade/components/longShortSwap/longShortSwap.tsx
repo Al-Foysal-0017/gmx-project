@@ -1,28 +1,27 @@
-import React, { useState } from 'react'
-import { HiMiniArrowsUpDown } from 'react-icons/hi2';
-import { LuArrowLeftRight } from 'react-icons/lu';
+import React from 'react'
 import { BsGraphUpArrow, BsGraphDownArrow, BsArrowLeftRight } from 'react-icons/bs';
 import styles from "./longShortSwap.module.css"
-import FirstCoinBox from './firstCoinBox/FirstCoinBox'
+import InputField from './inputField/inputField'
 import LeverageSlider from './leverageSlider/LeverageSlider'
 import Values from './values/Values'
 import BottomButton from './bottomButton/BottomButton'
+import useLongShortSwap from '@/hooks/useLongShortSwap';
 
 const OptionsBox = () => {
-    const [longShortSwip, setLongShortSwip] = useState("long")
+    const {currentStatus, setLong, setShort, setSwap} = useLongShortSwap();
   return (
     <div className={styles.optionsBox}>
         {/* Header */}
         <div className={styles.header}>
-            <div onClick={()=>{setLongShortSwip("long")}} className={`${styles.headerBtn} ${longShortSwip==="long" && styles.headerActive}`}>
+            <div onClick={setLong} className={`${styles.headerBtn} ${currentStatus==="long" && styles.headerActive}`}>
                 <span className={styles.headerBtnIcon}><BsGraphUpArrow/></span>
                 <span className={styles.headerBtnTxt} >Long</span>
             </div>
-            <div onClick={()=>{setLongShortSwip("short")}} className={`${styles.headerBtn} ${longShortSwip==="short" && styles.headerActive}`}>
+            <div onClick={setShort} className={`${styles.headerBtn} ${currentStatus==="short" && styles.headerActive}`}>
                 <span className={styles.headerBtnIcon}><BsGraphDownArrow/></span>
                 <span className={styles.headerBtnTxt}>Short</span>
             </div>
-            <div onClick={()=>{setLongShortSwip("swip")}} className={`${styles.headerBtn} ${longShortSwip==="swip" && styles.headerActive}`}>
+            <div onClick={setSwap} className={`${styles.headerBtn} ${currentStatus==="swap" && styles.headerActive}`}>
                 <span className={styles.headerBtnIcon}><BsArrowLeftRight/></span>
                 <span className={styles.headerBtnTxt}>Swap</span>
             </div>
@@ -33,21 +32,16 @@ const OptionsBox = () => {
             <span className={styles.marketLimitTpBtn}>Limit</span>
             <span className={styles.marketLimitTpBtn}>TP/SL</span>
         </div>
-        {/* First Coin Box */}
-        <FirstCoinBox/>
-        <div className={styles.swiper}/>
-        {/* <div className={styles.swipperBtn}>||</div> */}
-        <div className={styles.swipperBtnContainer}>
-            <div className={styles.swipperBtn}>
-                <HiMiniArrowsUpDown size={18}/>
-            </div>
-        </div>
-        <FirstCoinBox/>
-        <LeverageSlider/>
-        <Values/>
+        <InputField/>
+
+        {currentStatus!=="swap" &&
+            <>
+                <LeverageSlider/>
+                <Values/>
+            </> 
+        }
+
         <BottomButton/>
-        {/* Second Coin Box */}
-        {/* <SecondCoinBox/> */}
     </div>
   )
 }

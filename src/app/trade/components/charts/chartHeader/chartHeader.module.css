@@ -3,12 +3,11 @@
     justify-content: space-between;
 }
 .container{
-    background: #16182E;
+    background: var(--color-black-secondary);
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
 }
 .left{
     display: flex;
@@ -39,29 +38,28 @@
 }
 .secondaryTxt{
     font-size: 12px;
-    color: #BABAC0;
+    color: var(--color-gray);
 }
 .dynamicTxt{
     font-size: 17px;
-    color: #F23B56;
+    color: var(--color-red);
 }
 
 .versionContainer{
-    background: #16182E;
+    background: var(--color-black-secondary);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
     margin-left: 12px;
 }
 .version{
     font-size: 12px;
-    background: #2F325F;
+    background: var(--color-outline);
     padding: 12px;
     cursor: pointer;
 }
 .versionActive{
-    background: #2D42FC;
+    background: var(--color-blue);
 }
 
 

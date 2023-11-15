@@ -48,26 +48,7 @@
 }
 
 
-.swiper{
-    margin-top: 12px;
-}
-.swipperBtnContainer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.swipperBtn{
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: #2D42FC;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    margin-bottom: 8px;
-}
+
 
 
 
@@ -88,3 +69,6 @@
         width: 100%;
     }
   }
+
+
+  

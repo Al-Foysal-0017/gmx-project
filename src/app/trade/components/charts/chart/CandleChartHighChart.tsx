@@ -249,7 +249,6 @@ const CandlestickChartHighChart = () => {
     y: [6604.98, 6606, 6604.07, 6606]
   },
   ]
-
   const options = {
     chart: {
       type: 'candlestick', // Which type of chart it is
@@ -419,11 +418,81 @@ const CandlestickChartHighChart = () => {
 
   return (
     <div className={styles.chart}>
-      <HighchartsReact highcharts={Highcharts} options={options} />
+      <HighchartsReact 
+        // containerProps={{style:{width:"100%"}}} 
+        highcharts={Highcharts} options={options} 
+        />
     </div>
   );
 };
 
 export default CandlestickChartHighChart;
+
+
+
+
+
+// import HighchartsExporting from 'highcharts/modules/exporting'
+// import styles from "./chart.module.css"
+// // CandlestickChart.js
+// import React from 'react';
+// import Highcharts from 'highcharts/highstock';
+// import HighchartsReact from 'highcharts-react-official';
+
+
+
+// if (typeof Highcharts === 'object') {
+//   HighchartsExporting(Highcharts)
+// }
+
+
+// const CandlestickChart = () => {
+//   const data = [
+//     {
+//       x: new Date(1538778600000),
+//       y: [6629.81, 6650.5, 6623.04, 6633.33],
+//     },
+//     {
+//       x: new Date(1538780400000),
+//       y: [6632.01, 6643.59, 6620, 6630.11],
+//     },
+//     // Add more data points as needed
+//   ];
+
+//   const options = {
+//     title: {
+//       text: 'Candlestick Chart',
+//     },
+//     xAxis: {
+//       type: 'datetime',
+//     },
+//     yAxis: {
+//       title: {
+//         text: 'Price',
+//       },
+//     },
+//     series: [
+//       {
+//         type: 'candlestick',
+//         name: 'Stock Price',
+//         data: data.map((point) => [
+//           point.x.getTime(), // Convert Date object to timestamp
+//           ...point.y,
+//         ]),
+//       },
+//     ],
+//   };
+
+//   return (
+//     <div>
+//       <HighchartsReact 
+//       containerProps = {{ className: styles.chart }}
+//       highcharts={Highcharts} options={options} />
+//     </div>
+//   );
+// };
+
+// export default CandlestickChart;
+
 
 

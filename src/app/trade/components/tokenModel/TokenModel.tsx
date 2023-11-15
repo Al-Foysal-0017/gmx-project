@@ -1,15 +1,35 @@
 import React, { useCallback } from 'react'
 import { RxCross2 } from 'react-icons/rx';
-import styles from "./coinModel.module.css"
+import styles from "./tokenModel.module.css"
 import Image from 'next/image'
 import useTokenModel from '@/hooks/useTokenModel';
+import useInputValuesStore from '@/hooks/useCurrentToken';
 
-const CoinModel = () => {
-    const tokenModal = useTokenModel();
-    // const { onOpen, onClose } = useTokenModel();
-    const modelCloseSubmit = useCallback(async () => {
-        tokenModal.onClose();
-      }, [tokenModal]);
+const TokenModel = () => {
+const tokenModal = useTokenModel();
+  const modelCloseSubmit = useCallback(async () => {
+    tokenModal.onClose();
+  }, [tokenModal]);
+
+  const { setInput1Value, setInput2Value } = useInputValuesStore();
+
+  const handleCoinClick = (coin: any) => {
+    if (tokenModal.updateInput === "input1") {
+      setInput1Value({
+        img: coin.img,
+        token_name_short: coin.shortName,
+        token_name_full: coin.name,
+      });
+    } else if (tokenModal.updateInput === "input2") {
+      setInput2Value({
+        img: coin.img,
+        token_name_short: coin.shortName,
+        token_name_full: coin.name,
+      });
+    }
+    modelCloseSubmit();
+  };
+    
     const coinList = [
         {
             name: "Bitcoin (WBTC)",
@@ -80,7 +100,7 @@ const CoinModel = () => {
             <div className='divider'/>
             <div className={styles.coins}>
                 {coinList.map((coin, index)=>(
-                    <div key={index} className={styles.coin}>
+                    <div key={index} onClick={() => {handleCoinClick(coin); modelCloseSubmit();}} className={styles.coin}>
                         <Image 
                             width={40} 
                             height={40} 
@@ -101,4 +121,4 @@ const CoinModel = () => {
   )
 }
 
-export default CoinModel
+export default TokenModel
