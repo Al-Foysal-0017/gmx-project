@@ -8,7 +8,7 @@ import LongShortSwap from './components/longShortSwap/longShortSwap'
 import SummaryBox from './components/summaryBox/SummaryBox'
 import TokenModel from './components/tokenModel/TokenModel'
 import useTokenModel from '@/hooks/useTokenModel'
-import CandlestickChartApexChart from './components/charts/chart/CandleChartApexChart'
+import CandlestickChartApexChart from './components/charts/chart/CandleChart'
 
 const Trade = () => {
   const { isOpen:coinModel } = useTokenModel();

@@ -6,9 +6,11 @@ import LeverageSlider from './leverageSlider/LeverageSlider'
 import Values from './values/Values'
 import BottomButton from './bottomButton/BottomButton'
 import useLongShortSwap from '@/hooks/useLongShortSwap';
+import useMarketLimitTPStore from '@/hooks/useMarketLimitTP';
 
 const OptionsBox = () => {
     const {currentStatus, setLong, setShort, setSwap} = useLongShortSwap();
+    const {currentOption, setMarket, setLimit, setTP} = useMarketLimitTPStore()
   return (
     <div className={styles.optionsBox}>
         {/* Header */}
@@ -28,9 +30,9 @@ const OptionsBox = () => {
         </div>
         {/* Set Market, Limit, TP/SL*/}
         <div className={styles.marketLimitTpRow}>
-            <span className={styles.marketLimitTpBtn}>Market</span>
-            <span className={styles.marketLimitTpBtn}>Limit</span>
-            <span className={styles.marketLimitTpBtn}>TP/SL</span>
+            <span onClick={setMarket} className={`${styles.marketLimitTpBtn} ${currentOption==="market" && styles.marketLimitTpBtnActive}`}>Market</span>
+            <span onClick={setLimit} className={`${styles.marketLimitTpBtn} ${currentOption==="limit" && styles.marketLimitTpBtnActive}`}>Limit</span>
+            <span onClick={setTP} className={`${styles.marketLimitTpBtn} ${currentOption==="tp" && styles.marketLimitTpBtnActive}`}>TP/SL</span>
         </div>
         <InputField/>
 

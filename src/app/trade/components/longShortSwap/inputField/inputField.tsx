@@ -7,6 +7,7 @@ import { BsChevronDown } from 'react-icons/bs';
 import { HiMiniArrowsUpDown } from 'react-icons/hi2';
 import useLongShortSwap from '@/hooks/useLongShortSwap';
 import useInputValuesStore from '@/hooks/useCurrentToken';
+import useMarketLimitTPStore from '@/hooks/useMarketLimitTP';
 
 interface InputState {
     value: string;
@@ -18,8 +19,8 @@ interface InputState {
 const InputField = () => {
     const { onOpen } = useTokenModel();
     const {currentStatus} = useLongShortSwap();
-
-    const { input1Value, input2Value, setInput1Value, setInput2Value } = useInputValuesStore();
+    const { input1Value, input2Value, input3Value, setInput1Value, setInput2Value, setInput3Value } = useInputValuesStore();
+    const {currentOption} = useMarketLimitTPStore()
 
     const handleInputChange = (
         e: React.ChangeEvent<HTMLInputElement>,
@@ -100,6 +101,39 @@ const InputField = () => {
             </span>
         </div>
     </div>
+    {currentOption==="limit" && 
+        <div>
+        <div className={styles.divider}/>
+        <div className={styles.container}>
+            <div className={styles.headerRow}>
+                <span>Price</span>
+                <span>Mark: $37,760.24</span>
+            </div>
+            <div className={styles.inputRow}>
+                <input
+                    type='number'
+                    placeholder='0.0'
+                    className={styles.input}
+                    name='value'
+                    value={input3Value.value}
+                    onChange={(e) => handleInputChange(e, setInput3Value)}
+                />
+                <span onClick={() => onOpen("input3")} className={styles.coinBox}>
+                    {/* <Image
+                        width={20} 
+                        height={20} 
+                        src={input2Value.img}
+                        alt={input2Value.token_name_short}
+                        className={styles.logo}
+                    /> */}
+                    <span className={styles.coinName}>USD</span>
+                    {/* <span className={styles.coinName}>{input2Value.token_name_short}</span> */}
+                    {/* <BsChevronDown size={18} className={styles.icon}/> */}
+                </span>
+            </div>
+        </div>
+        </div>
+    }
     </>
   )
 }

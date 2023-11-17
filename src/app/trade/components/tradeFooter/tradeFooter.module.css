@@ -7,7 +7,7 @@
 }
 
 .container{
-    background: #16182E;
+    background: var(--color-black-secondary);
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -21,7 +21,6 @@
 }
 
 .headerBtn{
-    /* font-size: 13px; */
     cursor: pointer;
 }
 
@@ -29,9 +28,9 @@
     margin-right: 8px;
 }
 
-.headerRightTxt{
-    /* font-size: 13px; */
-}
+/* .headerRightTxt{
+    font-size: 13px;
+} */
 
 
 @media (max-width: 448px) {

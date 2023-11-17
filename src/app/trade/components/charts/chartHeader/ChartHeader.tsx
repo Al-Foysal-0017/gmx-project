@@ -6,10 +6,12 @@ import useVersion from '@/hooks/useVersion';
 import Image from 'next/image';
 import TokenList from '../tokenList/TokenList';
 import Wrapper from '@/components/Wrapper/Wrapper';
+import useCurrentToken from '@/hooks/useCurrentToken';
 
 const ChartHeader = () => {
     const { version, setV1, setV2 } = useVersion();
-    const [openCoinList, setOpenCoinList] = useState(false)
+    const [openCoinList, setOpenCoinList] = useState(false);
+    const {input2Value} = useCurrentToken();
   return (
     <>
     <div className={styles.chartHeader}>
@@ -18,11 +20,11 @@ const ChartHeader = () => {
                 <Image
                     width={20} 
                     height={20} 
-                    src="https://app.gmx.io/static/media/ic_arb_24.93fe233c9499c66fc2c5.svg"
-                    alt="ARB/USD"
+                    src={input2Value.img}
+                    alt={`${input2Value.token_name_short}/USD`}
                     className={styles.logo}
                 />
-                <span className={styles.coinName}>ARB/USD</span>
+                <span className={styles.coinName}>{input2Value.token_name_short}/USD</span>
                 <BsChevronDown size={18} className={styles.icon}/>
                 
             </div>

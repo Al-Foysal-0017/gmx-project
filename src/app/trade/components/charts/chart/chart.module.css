@@ -1,10 +1,18 @@
 .chart{
     width: 100%;
     height: 415px;
-    background: #16182E;
+    background: var(--color-black-secondary);
     margin-top: 12px;
     padding: 12px;
-    /* padding-top: 12px; */
-    /* border: 1px solid #373c70; */
+}
+
+.chartSwitchButton{
+    background: transparent;
+    cursor: pointer;
+    color: var(--color-gray);
+    border: 1px solid var(--color-gray);
+    padding: 2px 4px;
+    margin-left: 12px;
+    margin-bottom: 12px;
 }
 

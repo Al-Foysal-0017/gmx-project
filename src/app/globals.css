@@ -6,9 +6,10 @@
   --color-blue: #2D42FC;
   --color-black-primary: #08091B;
   --color-black-secondary: #16182E;
+  --color-black-tertiary: #1F243E;
   --color-outline: #363965;
+  --color-outline-secondary: #23263B;
 } 
-/* use: color: var(--color-white); */
 
 * {
   box-sizing: border-box;

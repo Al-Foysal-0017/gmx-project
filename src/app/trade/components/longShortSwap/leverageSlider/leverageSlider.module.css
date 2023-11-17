@@ -1,9 +1,7 @@
-/* .container{} */
 .row{
     display: flex;
     justify-content: space-between;
-    /* font-size: 12px; */
-    color: #BABAC0;
+    color: var(--color-gray);
     margin-top: 1rem;
 }
 

@@ -1,7 +1,5 @@
 .optionsBox{
-    /* width: 360px; */
-    /* width: 100%; */
-    background: #16182E;
+    background: var(--color-black-secondary);
     padding: 12px;
 }
 
@@ -9,6 +7,7 @@
     display: flex;
     justify-content: space-between;
 }
+
 .headerBtn{
     width: 33.33%;
     display: flex;
@@ -18,57 +17,63 @@
     cursor: pointer;
     background:  #212641;
     transition: all 0.2s ease-in-out;
-    /* border: 2px solid red; */
 }
+
 .headerBtn:hover{
     background: #2B3157;
 }
+
 .headerActive{
-    background: #2D42FC;
+    background: var(--color-blue);
+    color: var(--color-white);
 }
+
 .headerActive:hover{
-    background: #2D42FC;
+    background: var(--color-blue);
 }
+
 .headerBtnIcon{
     font-size: 12px;
     margin-right: 8px;
     margin-top: 3px;
 }
+
 .headerBtnTxt{
     font-size: 12px;
 }
 
 .marketLimitTpRow{
     display: flex;
-    /* font-size: 13px; */
-    color: #BABAC0;
     padding-top: 1rem;
     padding-bottom: 8px;
     gap: 1rem;
 }
 
+.marketLimitTpBtn{
+    color: var(--color-gray);
+    cursor: pointer;
+}
 
-
-
-
+.marketLimitTpBtnActive{
+    color: var(--color-white);
+    /* font-weight: 600; */
+}
 
 
 
 @media (max-width: 1048px) {
     .optionsBox{
-        /* 360-12=348 */
         margin-right: 12px;
         margin-top: 12px;
         width: calc(100% - 348px);
     }
-  }
+}
 
 
-  @media (max-width: 800px) {
+@media (max-width: 800px) {
     .optionsBox{
         width: 100%;
     }
-  }
+}
 
 
-  

@@ -3,19 +3,15 @@
     align-items: center;
     justify-content: space-between;
     padding: 8px 0;
-    /* padding-top: 1rem; */
-    /* padding-bottom: 1rem; */
-    border-top: 2px solid #23263B;
+    border-top: 2px solid var(--color-outline-secondary);
     margin-top: 10px;
-
 }
 
 .title{
     font-size: 12px;
-    color: #BABAC0;
+    color: var(--color-gray);
 }
 
 .value{
-    /* font-size: 13px; */
-    color: #FFFFFF;
+    color: var(--color-white);
 }

@@ -36,6 +36,10 @@
     padding-bottom: 12px;
 }
 
+.tableRow{
+    cursor: pointer;
+}
+
 .tableDataFirstCol{
     display: flex;
     align-items: center;

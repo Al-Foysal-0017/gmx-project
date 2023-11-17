@@ -2,17 +2,15 @@
 
     width: 380px;
 
-    background: #16182E;
-    /* width: 100%; */
+    background: var(--color-black-secondary);
     padding: 1rem 0;
     margin-top: 12px;
 }
 
 .summaryBoxTitle{
-    /* font-size: 14px; */
     padding: 0 1rem;
     padding-bottom: 1rem;
-    border-bottom: 2px solid #23263B;
+    border-bottom: 2px solid var(--color-outline-secondary);
     margin-bottom: 8px;
 }
 
@@ -26,18 +24,17 @@
 
 .title{
     font-size: 12px;
-    color: #BABAC0;
+    color: var(--color-gray);
 }
 
 .value{
-    /* font-size: 13px; */
-    color: #FFFFFF;
+    color: var(--color-white);
 }
 
 .progressValue{
     height: 2px; 
     width: 100px; 
-    background: linear-gradient(90deg, #0CC982 65%, #F73B57 65%);
+    background: linear-gradient(90deg, var(--color-green) 65%, var(--color-red) 65%);
 }
 
 
