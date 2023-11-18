@@ -1,11 +1,8 @@
-.optionsBox{
-    background: var(--color-black-secondary);
-    padding: 12px;
-}
-
 .header{
     display: flex;
     justify-content: space-between;
+    background: #212641;
+    border-radius: 4px;
 }
 
 .headerBtn{
@@ -17,6 +14,7 @@
     cursor: pointer;
     background:  #212641;
     transition: all 0.2s ease-in-out;
+    border-radius: 4px;
 }
 
 .headerBtn:hover{

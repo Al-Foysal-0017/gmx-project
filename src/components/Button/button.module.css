@@ -6,6 +6,7 @@
     font-weight: 400;
     background: var(--color-blue);
     border: 2px solid var(--color-blue);
+    border-radius: 4px;
     width: fit-content;
     transition: all 0.5s ease-in-out;
 }

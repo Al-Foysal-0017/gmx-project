@@ -50,6 +50,7 @@ const ChartHeader = () => {
         
         {/* Version */}
         <Wrapper className={styles.versionContainer}>
+            <div className={styles.versions}>
             <div 
                 onClick={setV1}
                 className={`${styles.version} ${version=="v1" && styles.versionActive}`}
@@ -61,6 +62,7 @@ const ChartHeader = () => {
                 className={`${styles.version} ${version=="v2" && styles.versionActive}`}
             >
                 V2
+            </div>
             </div>
         </Wrapper>
     </div>

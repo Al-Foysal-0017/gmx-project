@@ -2,28 +2,26 @@
 
     width: 380px;
 
-    background: var(--color-black-secondary);
-    padding: 1rem 0;
     margin-top: 12px;
+    border-radius: 4px;
 }
 
 .summaryBoxTitle{
     padding: 0 1rem;
-    padding-bottom: 1rem;
+}
+
+.divider{
     border-bottom: 2px solid var(--color-outline-secondary);
-    margin-bottom: 8px;
 }
 
 .row{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 1rem;
-    padding-top: 6px;
+    padding-bottom: 4px;
 }
 
 .title{
-    font-size: 12px;
     color: var(--color-gray);
 }
 

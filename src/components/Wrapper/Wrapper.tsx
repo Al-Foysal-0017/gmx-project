@@ -29,7 +29,7 @@ const Wrapper: React.FC<WrapperProps> = ({
         ...(upMargin && { marginTop: upMargin }),
         ...(bottomMargin && { marginBottom: bottomMargin }),
       }}
-      className={`${styles.pageLayout} ${className || ''}`}
+      className={`${styles.wrapper} ${className || ''}`}
     >
       {children}
     </div>

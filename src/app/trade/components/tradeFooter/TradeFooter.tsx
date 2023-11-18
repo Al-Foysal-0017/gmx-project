@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from "./tradeFooter.module.css"
+import Wrapper from '@/components/Wrapper/Wrapper'
 
 const TradeFooter = () => {
   return (
@@ -16,9 +17,9 @@ const TradeFooter = () => {
                 <span className={styles.headerRightTxt}>Chart positions</span>
             </div>
         </div>
-        <div className={styles.container}>
+        <Wrapper className={styles.container}>
             No open positions
-        </div>
+        </Wrapper>
     </div>
   )
 }

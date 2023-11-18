@@ -8,6 +8,7 @@ import { HiMiniArrowsUpDown } from 'react-icons/hi2';
 import useLongShortSwap from '@/hooks/useLongShortSwap';
 import useInputValuesStore from '@/hooks/useCurrentToken';
 import useMarketLimitTPStore from '@/hooks/useMarketLimitTP';
+import Wrapper from '@/components/Wrapper/Wrapper';
 
 interface InputState {
     value: string;
@@ -39,7 +40,7 @@ const InputField = () => {
   return (
     <>
     {/* FIRST INPUT FIELD */}
-    <div className={styles.container}>
+    <Wrapper className={styles.container}>
         <div className={styles.headerRow}>
             <span>Pay</span>
             <span>Balance</span>
@@ -65,7 +66,7 @@ const InputField = () => {
                 <BsChevronDown size={18} className={styles.icon}/>
             </span>
         </div>
-    </div>
+    </Wrapper>
     {/* SWIPPER BUTTON */}
     <div className={styles.swiper}/>
     <div className={styles.swipperBtnContainer}>
@@ -74,7 +75,7 @@ const InputField = () => {
             </div>
     </div>
     {/* SECOND INPUT FIELD */}
-    <div className={styles.container}>
+    <Wrapper className={styles.container}>
         <div className={styles.headerRow}>
             <span>{currentStatus==="long" && "Long" || currentStatus==="short" && "Short" || currentStatus==="swap" && "Receive"}</span>
             <span>Leverage</span>
@@ -100,11 +101,12 @@ const InputField = () => {
                 <BsChevronDown size={18} className={styles.icon}/>
             </span>
         </div>
-    </div>
+    </Wrapper>
     {currentOption==="limit" && 
         <div>
         <div className={styles.divider}/>
-        <div className={styles.container}>
+        {/* Third Input Field */}
+        <Wrapper className={styles.container}>
             <div className={styles.headerRow}>
                 <span>Price</span>
                 <span>Mark: $37,760.24</span>
@@ -131,7 +133,7 @@ const InputField = () => {
                     {/* <BsChevronDown size={18} className={styles.icon}/> */}
                 </span>
             </div>
-        </div>
+        </Wrapper>
         </div>
     }
     </>

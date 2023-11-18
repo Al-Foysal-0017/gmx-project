@@ -65,6 +65,7 @@ import { ApexOptions } from 'apexcharts';
 import styles from './chart.module.css';
 import dynamic from 'next/dynamic';
 import data from './data';
+import Wrapper from '@/components/Wrapper/Wrapper';
 
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
@@ -115,7 +116,7 @@ const MultipleCharts = () => {
   // };
 
   return (
-    <div className={styles.chart}>
+    <Wrapper className={styles.chart}>
       <div className={styles.buttons}>
         <button className={styles.chartSwitchButton} onClick={() => setChartType('candlestick')}>Candlestick</button>
         <button className={styles.chartSwitchButton} onClick={() => setChartType('bar')}>Bar</button>
@@ -125,7 +126,7 @@ const MultipleCharts = () => {
         {/* <button onClick={() => setChartType('heikinashi')}>Heikin Ashi</button> */}
       </div>
       <Chart options={options} series={series} type={chartType} width="100%" height={350} />
-    </div>
+    </Wrapper>
   );
 };
 

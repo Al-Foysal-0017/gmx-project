@@ -7,12 +7,13 @@ import Values from './values/Values'
 import BottomButton from './bottomButton/BottomButton'
 import useLongShortSwap from '@/hooks/useLongShortSwap';
 import useMarketLimitTPStore from '@/hooks/useMarketLimitTP';
+import Wrapper from '@/components/Wrapper/Wrapper';
 
 const OptionsBox = () => {
     const {currentStatus, setLong, setShort, setSwap} = useLongShortSwap();
     const {currentOption, setMarket, setLimit, setTP} = useMarketLimitTPStore()
   return (
-    <div className={styles.optionsBox}>
+    <Wrapper className={styles.optionsBox}>
         {/* Header */}
         <div className={styles.header}>
             <div onClick={setLong} className={`${styles.headerBtn} ${currentStatus==="long" && styles.headerActive}`}>
@@ -44,7 +45,7 @@ const OptionsBox = () => {
         }
 
         <BottomButton/>
-    </div>
+    </Wrapper>
   )
 }
 

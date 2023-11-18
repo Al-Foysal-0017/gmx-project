@@ -3,7 +3,6 @@
     justify-content: space-between;
 }
 .container{
-    background: var(--color-black-secondary);
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -46,17 +45,21 @@
 }
 
 .versionContainer{
-    background: var(--color-black-secondary);
+    margin-left: 12px;
+}
+.versions{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 12px;
+    border-radius: 4px;
+    background: var(--color-outline);
 }
 .version{
     font-size: 12px;
     background: var(--color-outline);
     padding: 12px;
     cursor: pointer;
+    border-radius: 4px;
 }
 .versionActive{
     background: var(--color-blue);

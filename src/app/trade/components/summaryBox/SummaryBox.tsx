@@ -1,11 +1,13 @@
 import React from 'react'
 import styles from "./summaryBox.module.css"
+import Wrapper from '@/components/Wrapper/Wrapper'
 
 const SummaryBox = () => {
   return (
     <div className={styles.container}>
-        <div className={styles.summaryBoxTitle}>Long ARB</div>
-        <div>
+        <Wrapper className={styles.summaryBoxTitle}>Long ARB</Wrapper>
+        <div className={styles.divider} />
+        <Wrapper>
             <div className={styles.row}>
                 <span className={styles.title}>Market</span>
                 <span className={styles.value}>ARB/USD[ARB-USDC]</span>
@@ -34,7 +36,7 @@ const SummaryBox = () => {
                 <span className={styles.title}>Open Interest Balance</span>
                 <span className={styles.progressValue}></span>
             </div>
-        </div>
+        </Wrapper>
     </div>
   )
 }
