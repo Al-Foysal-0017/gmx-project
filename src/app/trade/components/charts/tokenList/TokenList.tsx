@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import React, { useState } from 'react';
 import styles from "./tokenList.module.css";
 import Image from 'next/image';
 import Wrapper from '@/components/Wrapper/Wrapper';
@@ -8,6 +8,7 @@ import coinList from './data';
 
 const TokenList = ({openCoinList, setOpenCoinList}:any) => {
   const {setInput2Value} = useCurrentToken();
+  const [searchValue, setSearchValue] = useState("")
 
   const handleTokenClick = (token: any) => {
     setInput2Value({
@@ -18,12 +19,22 @@ const TokenList = ({openCoinList, setOpenCoinList}:any) => {
     setOpenCoinList(!openCoinList)
   };
 
+  const filterSearchCoins = coinList.filter(item=>
+    item.shortName.toLowerCase().includes(searchValue.toLowerCase())
+  )
+
   return (
     <>
     {openCoinList &&
     <div className={styles.container}>
       <Wrapper upPadding='0' bottomPadding='0'>
-        <input className={styles.searchInput} type='search' placeholder='Search Token' />
+        <input 
+          value={searchValue} 
+          onChange={(e)=>{setSearchValue(e.target.value)}}
+          className={styles.searchInput} 
+          type='search' 
+          placeholder='Search Token' 
+        />
       </Wrapper>
       <Wrapper className={styles.coins}>
         <table className={styles.table}>
@@ -32,7 +43,7 @@ const TokenList = ({openCoinList, setOpenCoinList}:any) => {
             <th className={styles.tableHead}>Long LIQ.</th>
             <th className={styles.tableHead}>Short LIQ.</th>
           </tr>
-          {coinList.map((item, index)=>(
+          {filterSearchCoins.map((item, index)=>(
           <tr onClick={() => {handleTokenClick(item)}} key={index} className={styles.tableRow}>
             <td className={styles.tableDataFirstCol}>
               <Image

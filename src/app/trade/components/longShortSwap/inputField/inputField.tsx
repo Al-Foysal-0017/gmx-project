@@ -54,16 +54,19 @@ const InputField = () => {
                 value={input1Value.value}
                 onChange={(e) => handleInputChange(e, setInput1Value)}
             />
-            <span onClick={() => onOpen("input1")} className={styles.coinBox}>
+            <span onClick={() => {currentOption!=="tp" && onOpen("input1")}} className={styles.coinBox}>
+                {currentOption!=="tp" &&
                 <Image
                     width={20} 
                     height={20} 
                     src={input1Value.img}
                     alt={input1Value.token_name_short}
                     className={styles.logo}
-                />
-                <span className={styles.coinName}>{input1Value.token_name_short}</span>
-                <BsChevronDown size={18} className={styles.icon}/>
+                />}
+                <span className={styles.coinName}>
+                    {currentOption==="tp" ? "USD" : input1Value.token_name_short}
+                </span>
+                {currentOption!=="tp" && <BsChevronDown size={18} className={styles.icon}/>}
             </span>
         </div>
     </Wrapper>
@@ -89,16 +92,19 @@ const InputField = () => {
                 value={input2Value.value}
                 onChange={(e) => handleInputChange(e, setInput2Value)}
             />
-            <span onClick={() => onOpen("input2")} className={styles.coinBox}>
+            <span onClick={() => {currentOption!=="tp" && onOpen("input2")}} className={styles.coinBox}>
+                {currentOption!=="tp" &&
                 <Image
                     width={20} 
                     height={20} 
                     src={input2Value.img}
                     alt={input2Value.token_name_short}
                     className={styles.logo}
-                />
-                <span className={styles.coinName}>{input2Value.token_name_short}</span>
-                <BsChevronDown size={18} className={styles.icon}/>
+                />}
+                <span className={styles.coinName}>
+                    {currentOption==="tp" ? "USD" : input2Value.token_name_short}
+                </span>
+                {currentOption!=="tp" && <BsChevronDown size={18} className={styles.icon}/>}
             </span>
         </div>
     </Wrapper>

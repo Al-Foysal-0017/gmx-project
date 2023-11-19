@@ -14,6 +14,7 @@ const OptionsBox = () => {
     const {currentOption, setMarket, setLimit, setTP} = useMarketLimitTPStore()
   return (
     <Wrapper className={styles.optionsBox}>
+        {/* currentStatus==="swap" &&  currentOption==="tp" ---> currentOption==="market" */}
         {/* Header */}
         <div className={styles.header}>
             <div onClick={setLong} className={`${styles.headerBtn} ${currentStatus==="long" && styles.headerActive}`}>
@@ -33,7 +34,9 @@ const OptionsBox = () => {
         <div className={styles.marketLimitTpRow}>
             <span onClick={setMarket} className={`${styles.marketLimitTpBtn} ${currentOption==="market" && styles.marketLimitTpBtnActive}`}>Market</span>
             <span onClick={setLimit} className={`${styles.marketLimitTpBtn} ${currentOption==="limit" && styles.marketLimitTpBtnActive}`}>Limit</span>
-            <span onClick={setTP} className={`${styles.marketLimitTpBtn} ${currentOption==="tp" && styles.marketLimitTpBtnActive}`}>TP/SL</span>
+            {currentStatus!=="swap" &&
+                <span onClick={setTP} className={`${styles.marketLimitTpBtn} ${currentOption==="tp" && styles.marketLimitTpBtnActive}`}>TP/SL</span>
+            }
         </div>
         <InputField/>
 

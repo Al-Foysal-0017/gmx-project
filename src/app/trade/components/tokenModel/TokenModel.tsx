@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useState } from 'react'
 import { RxCross2 } from 'react-icons/rx';
 import styles from "./tokenModel.module.css"
 import Image from 'next/image'
@@ -13,6 +13,7 @@ const TokenModel = () => {
   }, [tokenModal]);
 
   const { setInput1Value, setInput2Value } = useInputValuesStore();
+  const [searchValue, setSearchValue] = useState("")
 
   const handleCoinClick = (coin: any) => {
     if (tokenModal.updateInput === "input1") {
@@ -30,6 +31,11 @@ const TokenModel = () => {
     }
     modelCloseSubmit();
   };
+
+  const filterSearchCoins = coinList.filter(item=>
+    item.shortName.toLowerCase().includes(searchValue.toLowerCase())||
+    item.name.toLowerCase().includes(searchValue.toLowerCase())
+  )
     
   return (
     <div className={styles.container}>
@@ -39,11 +45,17 @@ const TokenModel = () => {
                 <span onClick={modelCloseSubmit} className={styles.dismiss}><RxCross2 size={24}/></span>
             </div>
             <div className={styles.searchInputContainer}>
-                <input className={styles.searchInput} type='search' placeholder='Search Token'/>
+                <input 
+                    value={searchValue} 
+                    onChange={(e)=>{setSearchValue(e.target.value)}}
+                    className={styles.searchInput} 
+                    type='search' 
+                    placeholder='Search Token'
+                />
             </div>
             <div className='divider'/>
             <div className={styles.coins}>
-                {coinList.map((coin, index)=>(
+                {filterSearchCoins.map((coin, index)=>(
                     <div key={index} onClick={() => {handleCoinClick(coin); modelCloseSubmit();}} className={styles.coin}>
                         <Image 
                             width={40} 
