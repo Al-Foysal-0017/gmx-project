@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BsGraphUpArrow, BsGraphDownArrow, BsArrowLeftRight } from 'react-icons/bs';
 import styles from "./longShortSwap.module.css"
 import InputField from './inputField/inputField'
@@ -11,7 +11,13 @@ import Wrapper from '@/components/Wrapper/Wrapper';
 
 const OptionsBox = () => {
     const {currentStatus, setLong, setShort, setSwap} = useLongShortSwap();
-    const {currentOption, setMarket, setLimit, setTP} = useMarketLimitTPStore()
+    const {currentOption, setMarket, setLimit, setTP} = useMarketLimitTPStore();
+
+    useEffect(()=>{
+        if(currentStatus==="swap" &&  currentOption==="tp"){
+            setMarket()
+        }
+    },[currentOption, currentStatus, setMarket])
   return (
     <Wrapper className={styles.optionsBox}>
         {/* currentStatus==="swap" &&  currentOption==="tp" ---> currentOption==="market" */}

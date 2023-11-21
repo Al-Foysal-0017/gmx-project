@@ -62,10 +62,12 @@
 
 import React, { useState } from 'react';
 import { ApexOptions } from 'apexcharts';
+import { MdOutlineCandlestickChart } from "react-icons/md"
 import styles from './chart.module.css';
 import dynamic from 'next/dynamic';
 import data from './data';
 import Wrapper from '@/components/Wrapper/Wrapper';
+import useChartState from '@/hooks/useChartState';
 
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
@@ -74,11 +76,13 @@ const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
 const MultipleCharts = () => {
   // const [chartType, setChartType] = useState<ChartType>('candlestick');
-  const [chartType, setChartType] = useState<any>('candlestick');
+  // const [chartType, setChartType] = useState<any>('candlestick');
+  const [dropdown, setDropdown] = useState(false)
+  const {currentChart, setCandle, setBar, setLine, setArea } = useChartState()
 
   const options: ApexOptions = {
     chart: {
-      type: chartType,
+      type: currentChart as any,
     },
     title: {
       text: `Chart`,
@@ -117,15 +121,22 @@ const MultipleCharts = () => {
 
   return (
     <Wrapper className={styles.chart}>
-      <div className={styles.buttons}>
-        <button className={styles.chartSwitchButton} onClick={() => setChartType('candlestick')}>Candlestick</button>
-        <button className={styles.chartSwitchButton} onClick={() => setChartType('bar')}>Bar</button>
-        <button className={styles.chartSwitchButton} onClick={() => setChartType('line')}>Line</button>
-        <button className={styles.chartSwitchButton} onClick={() => setChartType('area')}>Area</button>
-        {/* <button onClick={() => setChartType('baseline')}>Baseline</button> */}
-        {/* <button onClick={() => setChartType('heikinashi')}>Heikin Ashi</button> */}
+      <div className={styles.iconContainer} onClick={()=>{setDropdown(!dropdown)}}>
+        <MdOutlineCandlestickChart size={24} className={styles.icon}/>
       </div>
-      <Chart options={options} series={series} type={chartType} width="100%" height={350} />
+      {dropdown &&
+        <div className={styles.dropdown}>
+          {/* <button className={styles.chartSwitchButton} onClick={() => setChartType('candlestick')}>Candlestick</button>
+          <button className={styles.chartSwitchButton} onClick={() => setChartType('bar')}>Bar</button>
+          <button className={styles.chartSwitchButton} onClick={() => setChartType('line')}>Line</button>
+          <button className={styles.chartSwitchButton} onClick={() => setChartType('area')}>Area</button> */}
+          <button className={styles.chartSwitchButton} onClick={()=>{setCandle(); setDropdown(!dropdown)}}>Candlestick</button>
+          <button className={styles.chartSwitchButton} onClick={()=>{setBar(); setDropdown(!dropdown)}}>Bar</button>
+          <button className={styles.chartSwitchButton} onClick={()=>{setLine(); setDropdown(!dropdown)}}>Line</button>
+          <button className={styles.chartSwitchButton} onClick={()=>{setArea(); setDropdown(!dropdown)}}>Area</button>
+        </div>
+      }
+      <Chart options={options} series={series} type={currentChart as any} width="100%" height={350} />
     </Wrapper>
   );
 };
