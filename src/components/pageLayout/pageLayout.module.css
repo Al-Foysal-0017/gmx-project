@@ -4,3 +4,10 @@
     margin: 0 auto;
     min-height: 100vh;
 }
+
+
+@media (max-width: 580px) {
+    .pageLayout{
+        padding: 1rem;
+    }
+  }

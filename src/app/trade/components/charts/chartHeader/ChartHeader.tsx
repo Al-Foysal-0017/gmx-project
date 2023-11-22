@@ -24,7 +24,7 @@ const ChartHeader = () => {
                     alt={`${input2Value.token_name_short}/USD`}
                     className={styles.logo}
                 />
-                <span className={styles.coinName}>{input2Value.token_name_short}/USD</span>
+                <span className={styles.coinName}>{input2Value.token_name_short} / USD</span>
                 <BsChevronDown size={18} className={styles.icon}/>
                 
             </div>
